@@ -3,7 +3,7 @@ const App = () => {
 	return (
 		<>
 			<BriefcaseIcon className="h-16 w-16 text-violet-600" />
-			{/* <h2>Hey</h2> */}
+			<h1 className="font-bold">Heyy Boys</h1>
 		</>
 	);
 };
