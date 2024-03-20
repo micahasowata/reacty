@@ -2,7 +2,12 @@
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				ojuju: ["Ojuju", "sans-serif"],
+				rethink: ["Rethink Sans", "sans-serif"],
+			},
+		},
 	},
 	plugins: [],
 };
