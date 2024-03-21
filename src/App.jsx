@@ -35,7 +35,6 @@ const App = () => {
 						<a href="/">All Jobs</a>
 					</button>
 				</div>
-				<p>Hey</p>
 			</div>
 		</>
 	);
