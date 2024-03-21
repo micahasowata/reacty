@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const JobCard = ({ job }) => {
 	const [showFullDescription, setShowFullDescription] = useState(false);
@@ -22,7 +23,7 @@ const JobCard = ({ job }) => {
 				type="submit"
 				className="bg-neutral-950 text-white px-3 py-2 rounded-sm"
 			>
-				<a href={`/jobs/${job.id}`}>Read More</a>
+				<Link to={`/jobs/${job.id}`}>Read More</Link>
 			</button>
 		</div>
 	);
