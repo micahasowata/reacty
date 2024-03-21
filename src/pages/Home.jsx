@@ -12,9 +12,10 @@ const Home = () => {
 					title={"For developers"}
 					body={"search for jobs here"}
 					cta={"Find jobs"}
+					to={"/jobs"}
 				/>
 			</div>
-			<Listing end={2} />
+			<Listing end={2} cta={"All Jobs"} to={"/jobs"} />
 		</>
 	);
 };
