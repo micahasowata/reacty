@@ -1,6 +1,6 @@
 const Hero = () => {
 	return (
-		<div className="flex flex-col place-content-center py-16">
+		<div className="flex flex-col place-content-center py-8 my-9">
 			<div className="grid col-span-12 row-span-12 place-content-center">
 				<h2 className="font-ojuju font-light text-7xl pt-8 pb-4">
 					React Jobs.
