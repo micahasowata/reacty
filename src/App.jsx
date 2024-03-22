@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Main from "./layout/Main";
 import Home from "./pages/Home";
-import Job from "./pages/Job";
+import Job, { jobLoader } from "./pages/Job";
 import Jobs from "./pages/Jobs";
 import NotFound from "./pages/NotFound";
 
@@ -15,7 +15,7 @@ const router = createBrowserRouter(
 		<Route path="/" element={<Main />}>
 			<Route index element={<Home />} />
 			<Route path="/jobs" element={<Jobs />} />
-			<Route path="/jobs/:id" element={<Job />} />
+			<Route path="/jobs/:id" element={<Job />} loader={jobLoader} />
 			<Route path="*" element={<NotFound />} />
 		</Route>,
 	),
