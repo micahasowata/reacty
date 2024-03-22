@@ -1,16 +1,27 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import jobs from "../jobs.json";
 import JobCard from "./JobCard";
-const Listing = ({
-	end = jobs.jobs.length,
-	header = "Browse Jobs",
-	cta,
-	to = "/",
-}) => {
-	if (end > jobs.jobs.length) {
-		end = jobs.jobs.length;
-	}
-	const latestJobs = jobs.jobs.slice(0, end);
+import Spinner from "./Spinner";
+const Listing = ({ end, header = "Browse Jobs", cta, to = "/" }) => {
+	const [jobs, setJobs] = useState([]);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		const fetchJobs = async () => {
+			try {
+				const res = await fetch("http://localhost:5000/jobs");
+				const data = await res.json();
+				setJobs(data);
+			} catch (error) {
+				console.error("jobs fetch error", error);
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		fetchJobs();
+	}, []);
+
 	return (
 		<>
 			<section className="flex flex-col flex-wrap place-content-center bg-slate-200">
@@ -18,9 +29,15 @@ const Listing = ({
 					{header}
 				</h2>
 				<div className="flex flex-wrap justify-around">
-					{latestJobs.map((job) => (
-						<JobCard key={job.id} job={job} />
-					))}
+					{loading ? (
+						<Spinner />
+					) : end !== 0 ? (
+						jobs.slice(0, end).map((job) => <JobCard key={job.id} job={job} />)
+					) : (
+						jobs
+							.slice(0, jobs.length)
+							.map((job) => <JobCard key={job.id} job={job} />)
+					)}
 				</div>
 				<div className="grid grid-cols-12 place-content-center">
 					<button
