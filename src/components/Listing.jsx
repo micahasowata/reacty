@@ -9,7 +9,7 @@ const Listing = ({ end, header = "Browse Jobs", cta, to = "/" }) => {
 	useEffect(() => {
 		const fetchJobs = async () => {
 			try {
-				const res = await fetch("http://localhost:5000/jobs");
+				const res = await fetch("/api/jobs");
 				const data = await res.json();
 				setJobs(data);
 			} catch (error) {
