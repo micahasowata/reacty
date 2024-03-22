@@ -13,9 +13,9 @@ const Navbar = () => {
 					<Link to="/jobs" className="p-3 font-rethink font-semibold">
 						Jobs
 					</Link>
-					<a href="/" className="p-3 font-rethink font-semibold">
+					<Link to="/jobs/new" className="p-3 font-rethink font-semibold">
 						Add Jobs
-					</a>
+					</Link>
 				</div>
 			</ul>
 		</nav>

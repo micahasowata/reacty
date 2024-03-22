@@ -7,7 +7,12 @@ const Home = () => {
 		<>
 			<Hero />
 			<div className="flex flex-row justify-evenly pt-10 pb-5">
-				<Card title={"For employers"} body={"post jobs here"} cta={"Add Job"} />
+				<Card
+					title={"For employers"}
+					body={"post jobs here"}
+					cta={"Add Job"}
+					to={"/jobs/new"}
+				/>
 				<Card
 					title={"For developers"}
 					body={"search for jobs here"}
