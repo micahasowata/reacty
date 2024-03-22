@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 const NewJob = ({ addJob }) => {
 	const navigate = useNavigate();
@@ -20,6 +21,7 @@ const NewJob = ({ addJob }) => {
 		};
 
 		addJob(newJob);
+		toast.success("added job successfully");
 		return navigate("/jobs");
 	};
 
