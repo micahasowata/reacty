@@ -47,7 +47,7 @@ const Job = ({ deleteJob }) => {
 								type="submit"
 								className=" align-middle font-semibold text-2xl bg-neutral-800 text-slate-100 p-2 my-4 rounded-sm"
 							>
-								<Link to={"/jobs"}>Edit Job</Link>
+								<Link to={`/jobs/${job.id}/edit`}>Edit Job</Link>
 							</button>
 							<button
 								type="submit"
