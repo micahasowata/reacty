@@ -1,13 +1,11 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const JobCard = ({ job }) => {
-	const [showFullDescription, setShowFullDescription] = useState(false);
-
-	let description = job.description;
-
-	if (!showFullDescription) {
-		description = description.substring(0, 223);
+const JobCard = ({ job, end }) => {
+	let description = job.description.toString();
+	if (end !== 0) {
+		description = `${description.substring(0, end)}...`;
+	} else {
+		description = description.substring(0, description.length);
 	}
 
 	return (
@@ -17,7 +15,7 @@ const JobCard = ({ job }) => {
 				{job.location.toString().toLowerCase()}
 			</sup>
 			<h3 className="font-semibold text-2xl">{job.title}</h3>
-			<p className="font-light pb-2">{description}...</p>
+			<p className="font-light pb-2">{description}</p>
 			<p className="font-medium py-2">{job.salary}</p>
 			<button
 				type="submit"

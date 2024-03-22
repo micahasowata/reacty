@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import JobCard from "./JobCard";
 import Spinner from "./Spinner";
-const Listing = ({ end, header = "Browse Jobs", cta, to = "/" }) => {
+const Listing = ({ end, header = "Browse Jobs", cta, to = "/", endOfDesc }) => {
 	const [jobs, setJobs] = useState([]);
 	const [loading, setLoading] = useState(true);
 
@@ -32,11 +32,13 @@ const Listing = ({ end, header = "Browse Jobs", cta, to = "/" }) => {
 					{loading ? (
 						<Spinner />
 					) : end !== 0 ? (
-						jobs.slice(0, end).map((job) => <JobCard key={job.id} job={job} />)
+						jobs
+							.slice(0, end)
+							.map((job) => <JobCard key={job.id} job={job} end={endOfDesc} />)
 					) : (
 						jobs
 							.slice(0, jobs.length)
-							.map((job) => <JobCard key={job.id} job={job} />)
+							.map((job) => <JobCard key={job.id} job={job} end={endOfDesc} />)
 					)}
 				</div>
 				<div className="grid grid-cols-12 place-content-center">

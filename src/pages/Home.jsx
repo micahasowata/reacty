@@ -15,7 +15,7 @@ const Home = () => {
 					to={"/jobs"}
 				/>
 			</div>
-			<Listing end={2} cta={"All Jobs"} to={"/jobs"} />
+			<Listing end={2} cta={"All Jobs"} to={"/jobs"} endOfDesc={223} />
 		</>
 	);
 };
