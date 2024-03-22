@@ -1,9 +1,11 @@
-const NewJob = () => {
+import { useNavigate } from "react-router-dom";
+const NewJob = ({ addJob }) => {
+	const navigate = useNavigate();
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
-
 		const formData = new FormData(event.target);
-		const jobForm = {
+		const newJob = {
 			type: formData.get("type").toString(),
 			title: formData.get("title").toString(),
 			description: formData.get("description").toString(),
@@ -17,8 +19,8 @@ const NewJob = () => {
 			},
 		};
 
-		const jobFormJSON = JSON.stringify(jobForm);
-		console.log(jobFormJSON);
+		addJob(newJob);
+		return navigate("/jobs");
 	};
 
 	return (

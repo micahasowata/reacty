@@ -83,6 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "423d",
+      "type": "full-time",
+      "title": "UI Guy",
+      "description": "We are looking for a UI engineer to work with us. We collect funding so funds dey.",
+      "salary": "$80K - $100K",
+      "location": "UI Paradise",
+      "company": {
+        "name": "Hornword",
+        "description": "Hornword makes it easy for anybody to have a beautiful blog on the internet",
+        "contactEmail": "hr@hornword.com",
+        "contactPhone": "+121 338 378 55"
+      }
     }
   ]
 }
